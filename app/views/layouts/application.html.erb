@@ -18,14 +18,13 @@
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %>
-          <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
+          - <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
         <% end %>
       </div>
     </ul>
+  <p class="notice pull-left"><%= notice %></p>
+  <p class="alert pull-left"><%= alert %></p>
   </div>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
   <%= yield %>
 
