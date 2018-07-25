@@ -1,7 +1,7 @@
 require 'rails_helper'
-include Devise::Test::ControllerHelpers
 
 RSpec.describe WikisController, type: :controller do
+  let(:my_wiki) { create(:wiki) }
 
   describe "GET #index" do
     it "returns http success" do
@@ -12,7 +12,7 @@ RSpec.describe WikisController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show
+      get :show, {id: my_wiki.id}
       expect(response).to have_http_status(:success)
     end
   end
@@ -26,7 +26,7 @@ RSpec.describe WikisController, type: :controller do
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      get :edit, {id: my_wiki.id}
       expect(response).to have_http_status(:success)
     end
   end
