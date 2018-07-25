@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -8,11 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'b1ceeeac878cc219c7b613b95332643b8d33290be42f65f78babf814cbf5a8c712297d7c32a6ebd07a8ae5c1705f61fa069de623920d17b2e413dfc616821f7f'
-
-  # ==> Controller configuration
-  # Configure the parent class to the devise controllers.
-  # config.parent_controller = 'DeviseController'
+  # config.secret_key = '129b5593068e30a4d0f34df2c3ed6e6effeb7d4934bee848c433cb1672776a01ecfae91a9caf871bd597a636aa31052994e167e53585f8bef90a189941f0069a'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -114,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '3f0dfcb463debde396637d5208147c772fb31868466d1f3fd20db0c56c9bbdf1dc353384385cb7fa57ad04b8e98bcc7f3b196a894b36aad6927e19ce5afc29ce'
+  # config.pepper = 'de19be6851ee220389395f8896e5916873bd6e0303d289fb535abb3fb2df1efa7a2b3af0d2d1cc03db04eb921e6cbe93c7ab75ee1d0ad546ac8f78640ef91a8c'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -142,7 +136,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
