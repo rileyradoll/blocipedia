@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Wiki, type: :model do
-  let(:my_wiki) { create(:wiki) }
+  let(:user) { create(:user) }
+  let(:my_wiki) { create(:wiki, user: user) }
+  
+  it { is_expected.to belong_to(:user) }
 
   describe "attributes" do
     it "has title, body and private attributes" do
