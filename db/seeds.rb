@@ -9,42 +9,44 @@ require 'faker'
 require 'factory_bot_rails'
 
 10.times do
-   FactoryBot.create(:user)
+  User.create!(
+    email: Faker::Internet.email,
+    password: 'helloworld',
+    confirmed_at: Date.today
+   )
 end
 
 users = User.all
 
 50.times do
-  FactoryBot.create(
-    :wiki,
-    user: users.sample
+  Wiki.create!(
+    user: users.sample,
+    title: Faker::BojackHorseman.quote,
+    body: Faker::BojackHorseman.tongue_twister
   )
 end
 
 wikis = Wiki.all
 
-standard = FactoryBot.create(
-  :user,
-  email: 'stand@mail.com',
+standard = User.create!(
+  email: 'standard@example.com',
   password: 'password',
-  password_confirmation: 'password',
-  role: 'standard'
+  confirmed_at: Date.today,
+  role: :standard
 )
 
-premium = FactoryBot.create(
-  :user,
-  email: 'prem@mail.com',
+premium = User.create(
+  email: 'premium@example.com',
   password: 'password',
-  password_confirmation: 'password',
-  role: 'premium'
+  confirmed_at: Date.today,
+  role: :premium
 )
 
-admin = FactoryBot.create(
-  :user,
-  email: 'admin@mail.com',
+admin = User.create(
+  email: 'admin@example.com',
   password: 'password',
-  password_confirmation: 'password',
-  role: 'admin'
+  confirmed_at: Date.today,
+  role: :admin
 )
 
 puts "Seeding complete"
