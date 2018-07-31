@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :wiki do
-    title "MyString"
-    body "MyText"
+    title Faker::BojackHorseman.unique.character
+    body Faker::BojackHorseman.unique.quote
     private false
     user nil
   end
