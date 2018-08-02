@@ -10,6 +10,7 @@ require 'factory_bot_rails'
 
 10.times do
   User.create!(
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: 'helloworld',
     confirmed_at: Date.today
@@ -29,6 +30,7 @@ end
 wikis = Wiki.all
 
 standard = User.create!(
+  name: 'Standard User',
   email: 'standard@example.com',
   password: 'password',
   confirmed_at: Date.today,
@@ -36,6 +38,7 @@ standard = User.create!(
 )
 
 premium = User.create(
+  name: 'Premium User',
   email: 'premium@example.com',
   password: 'password',
   confirmed_at: Date.today,
@@ -43,6 +46,7 @@ premium = User.create(
 )
 
 admin = User.create(
+  name: 'Admin User',
   email: 'admin@example.com',
   password: 'password',
   confirmed_at: Date.today,
