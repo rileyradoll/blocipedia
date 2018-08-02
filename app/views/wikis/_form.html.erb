@@ -1,9 +1,14 @@
 <%= form_for @wiki do |f| %>
-   <%= f.label :title %>
-   <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-   <br>
-   <%= f.label :body %>
-   <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
-   <br>
-   <%= f.submit "Save", class: 'btn btn-success' %>
- <% end %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
+
+  <% if current_user.admin? || current_user.premium? %>
+    <%= f.label :private, class: 'checkbox' %>
+    <%= f.check_box :private %>
+  <% end %>
+
+  <%= f.submit "Save", class: 'btn btn-success' %>
+<% end %>

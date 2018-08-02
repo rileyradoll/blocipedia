@@ -19,11 +19,12 @@ end
 
 users = User.all
 
-50.times do
+20.times do
   Wiki.create!(
     user: users.sample,
     title: Faker::BojackHorseman.quote,
-    body: Faker::BojackHorseman.tongue_twister
+    body: Faker::BojackHorseman.tongue_twister,
+    private: false
   )
 end
 
