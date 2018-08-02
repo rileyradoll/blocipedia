@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe WikisController, type: :controller do
-  let(:my_wiki) { create(:wiki) }
   let(:my_user) { create(:user) }
+  let(:my_wiki) { create(:wiki, user: my_user) }
 
   before do
     sign_in(my_user)
