@@ -2,7 +2,7 @@
 
 ### Community Collaboration Wiki App
 
-Community members can create, edit markdown wikis relating to any collaborative projects.
+Community members can create, and edit markdown wikis relating to any collaborative projects.
 
 ### Checkout out the deployed version here:
 https://young-meadow-21165.herokuapp.com/
